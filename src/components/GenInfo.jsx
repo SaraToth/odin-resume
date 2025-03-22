@@ -1,7 +1,7 @@
 import { useState } from "react"
 import "./GenInfo.css"
 
-export default function GenInfo() {
+export default function GenInfo({onSubmit}) {
 
     // First render will be form to edit
     const [formStatus, setFormStatus] = useState({isEditing: true, isDisplaying: false})
@@ -23,6 +23,7 @@ export default function GenInfo() {
 
         setFormData(newFormData);
         setFormStatus({isEditing: false, isDisplaying: true})
+        onSubmit(); // Call on onSubmit passed down via app
     }
 
     const handleChange = (e) => {
