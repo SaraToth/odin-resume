@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-export default function Job() {
+export default function Job({onSubmit}) {
 
     // First render will be form to edit
     const [formStatus, setFormStatus] = useState({isEditing: true, isDisplaying: false})
@@ -21,6 +21,7 @@ export default function Job() {
 
         setFormData(newFormData);
         setFormStatus({isEditing: false, isDisplaying: true});
+        onSubmit()
     }
 
 
@@ -58,7 +59,7 @@ export default function Job() {
 
     if(!formStatus.isEditing && formStatus.isDisplaying) {
         return(
-            <h1>Done!</h1>
+            <h1>Not Done!</h1>
         )
     }
 
