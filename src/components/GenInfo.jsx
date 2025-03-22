@@ -1,5 +1,4 @@
 import { useState } from "react"
-import './GenInfo.css'
 
 export default function GenInfo() {
 
@@ -37,31 +36,44 @@ export default function GenInfo() {
     if(formStatus.isEditing && !formStatus.isDisplaying) {
         return (
             <>
-            <h1>General Information</h1>
             <div className="form-container">
                 <form onSubmit={handleSubmit}>
-                    <div>
-                        <label htmlFor="first">First Name:</label>
-                        <input type="text" id="first" name="first" value={formData.first} onChange={handleChange} required></input>
+                    <h1>General Information</h1>
+                    <div className="form-content">
 
-                        <label htmlFor="last">Last Name:</label>
-                        <input type="text" id="last" name="last" value={formData.last} onChange={handleChange} required></input>
+                        <div className="form-row">
+                            <div className="form-item">
+                                <label htmlFor="first">First Name:</label>
+                                <input type="text" id="first" name="first" value={formData.first} onChange={handleChange} required></input>
+                            </div>
+
+                            <div className="form-item">
+                                <label htmlFor="last">Last Name:</label>
+                                <input type="text" id="last" name="last" value={formData.last} onChange={handleChange} required></input>
+                            </div>
+                        </div>
+
+                        <div className="form-row">
+                            <div className="form-item">
+                                <label htmlFor="email">Email:</label>
+                                <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} required></input>
+                            </div>
+
+                            <div className="form-item">
+                                <label htmlFor="phone">Phone:</label>
+                                <input type="phone" id="phone" name="phone" value={formData.phone} onChange={handleChange} required></input>
+                            </div>
+                        </div>
+
+
+                        <div className="form-item">
+                            <label htmlFor="title">Job Title:</label>
+                            <input type="text" id="title" name="title" value={formData.title} onChange={handleChange} required></input>
+                        </div>
                     </div>
-                    
-                    <div>
-                        <label htmlFor="email">Email:</label>
-                        <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} required></input>
-
-                        <label htmlFor="phone">Phone:</label>
-                        <input type="phone" id="phone" name="phone" value={formData.phone} onChange={handleChange} required></input>
+                    <div className="form-btn">
+                        <button type="submit" className="submit-btn">Submit</button>
                     </div>
-
-                    <div>
-                        <label htmlFor="title">Current or Desired Job Title:</label>
-                        <input type="text" id="title" name="title" value={formData.title} onChange={handleChange} required></input>
-                    </div>
-
-                    <button type="submit" className="submit-btn">Submit</button>
                 </form>
             </div>
             </>
@@ -70,14 +82,17 @@ export default function GenInfo() {
 
     if(!formStatus.isEditing && formStatus.isDisplaying) {
         return (
-            <>
-            <h1>General Information</h1>
-            <p>{formData.first}</p>
-            <p>{formData.last}</p>
-            <p>{formData.title}</p>
-            <p>{formData.phone}</p>
-            <p>{formData.email}</p>
-            </>
+            <div className="display-container">
+                <div className="display-content">
+                    <h1>General Information</h1>
+                    <p>{formData.first}</p>
+                    <p>{formData.last}</p>
+                    <p>{formData.title}</p>
+                    <p>{formData.phone}</p>
+                    <p>{formData.email}</p>
+                </div>
+            </div>
+
         )
     }
 

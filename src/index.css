@@ -9,8 +9,7 @@
 }
 
 h1 {
-  text-align: center;
-  padding: 10px 0;
+  padding: 40px 0;
 }
 
 /* Contains main content and footer */
@@ -28,12 +27,57 @@ h1 {
 }
 
 /* GenInfo form-container */
-.form-container {
+.form-container, .display-container {
+  border: 1px solid black;
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 0 50px;
+  
+}
+
+form, .display-content {
+  border: 1px solid black;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  min-height: 450px;
+  min-width: 550px;
+  padding: 0 50px;
+}
+
+.form-content {
+  flex: 1;
+}
+
+.form-row {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 20px;
+}
+
+.form-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 40px;
+}
+
+input {
+  width: 200px;
+  height: 30px;
+}
+
+/* Job title expands full width */
+#title {
+  width: 100%;
 }
 
 footer {
@@ -46,5 +90,12 @@ footer {
 
 /* Submit Buttons */
 .submit-btn {
-  background-color: lightblue;
+  background-color: pink;
+  height: 35px;
+  width: 200px;
+}
+
+.submit-btn:hover {
+  cursor: pointer;
+  background-color: palevioletred;
 }
