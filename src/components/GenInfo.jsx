@@ -38,30 +38,32 @@ export default function GenInfo() {
         return (
             <>
             <h1>General Information</h1>
-            <form onSubmit={handleSubmit}>
-                <div>
-                    <label htmlFor="first">First Name:</label>
-                    <input type="text" id="first" name="first" value={formData.first} onChange={handleChange} required></input>
+            <div className="form-container">
+                <form onSubmit={handleSubmit}>
+                    <div>
+                        <label htmlFor="first">First Name:</label>
+                        <input type="text" id="first" name="first" value={formData.first} onChange={handleChange} required></input>
 
-                    <label htmlFor="last">Last Name:</label>
-                    <input type="text" id="last" name="last" value={formData.last} onChange={handleChange} required></input>
-                </div>
-                
-                <div>
-                    <label htmlFor="email">Email:</label>
-                    <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} required></input>
+                        <label htmlFor="last">Last Name:</label>
+                        <input type="text" id="last" name="last" value={formData.last} onChange={handleChange} required></input>
+                    </div>
+                    
+                    <div>
+                        <label htmlFor="email">Email:</label>
+                        <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} required></input>
 
-                    <label htmlFor="phone">Phone:</label>
-                    <input type="phone" id="phone" name="phone" value={formData.phone} onChange={handleChange} required></input>
-                </div>
+                        <label htmlFor="phone">Phone:</label>
+                        <input type="phone" id="phone" name="phone" value={formData.phone} onChange={handleChange} required></input>
+                    </div>
 
-                <div>
-                    <label htmlFor="title">Current or Desired Job Title:</label>
-                    <input type="text" id="title" name="title" value={formData.title} onChange={handleChange} required></input>
-                </div>
+                    <div>
+                        <label htmlFor="title">Current or Desired Job Title:</label>
+                        <input type="text" id="title" name="title" value={formData.title} onChange={handleChange} required></input>
+                    </div>
 
-                <button type="submit" className="submit-btn">Submit</button>
-            </form>
+                    <button type="submit" className="submit-btn">Submit</button>
+                </form>
+            </div>
             </>
         )
     }
