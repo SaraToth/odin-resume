@@ -1,25 +1,33 @@
+/* General Styles */
+
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+
+  /* Ensure no height overflow */
+  box-sizing: border-box; 
 }
 
 h1 {
   text-align: center;
   padding: 10px 0;
 }
+
+/* Contains main content and footer */
 .app-container {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
+/* Contains component page */
 .main {
   flex: 1;
   display: flex;
   flex-direction: column;
 }
 
+/* GenInfo form-container */
 .form-container {
   flex: 1;
   display: flex;
@@ -36,6 +44,7 @@ footer {
   background-color: pink;
 }
 
+/* Submit Buttons */
 .submit-btn {
   background-color: lightblue;
 }
