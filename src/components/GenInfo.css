@@ -1,0 +1,90 @@
+/* GenInfo containers */
+.form-container {
+    border: 1px solid black;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 50px;
+  }
+
+  .form-container h1 {
+    padding: 40px 0;
+  }
+  
+  form {
+    border: 1px solid black;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    min-height: 450px;
+    min-width: 550px;
+    padding: 0 50px;
+  }
+  
+  .form-content {
+    flex: 1;
+  }
+  
+  .form-row {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 20px;
+  }
+  
+  .form-item {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 40px;
+  }
+  
+  input {
+    width: 200px;
+    height: 30px;
+  }
+  
+  /* Job title expands full width */
+  #title {
+    width: 100%;
+  }
+  
+
+/* Display Content Styles */
+.display-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 50px;
+}
+
+.display-content {
+    border: 1px solid black;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    min-height: 250px;
+    min-width: 700px;
+    padding: 0 50px;
+}
+
+.display-container h1 {
+    padding: 20px 0;
+    font-size: 42px;
+}
+
+.display-container h2 {
+    padding-bottom: 8px;
+}
+
+.display-contact {
+    display: flex;
+    gap: 20px;
+}

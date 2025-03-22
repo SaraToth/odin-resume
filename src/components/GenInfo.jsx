@@ -1,4 +1,5 @@
 import { useState } from "react"
+import "./GenInfo.css"
 
 export default function GenInfo() {
 
@@ -81,15 +82,16 @@ export default function GenInfo() {
     }
 
     if(!formStatus.isEditing && formStatus.isDisplaying) {
+        const name = formData.first + " " + formData.last;
         return (
             <div className="display-container">
                 <div className="display-content">
-                    <h1>General Information</h1>
-                    <p>{formData.first}</p>
-                    <p>{formData.last}</p>
-                    <p>{formData.title}</p>
-                    <p>{formData.phone}</p>
-                    <p>{formData.email}</p>
+                    <h1>{name}</h1>
+                    <h2>{formData.title}</h2>
+                    <div className="display-contact">
+                        <div>{formData.phone}</div>
+                        <div>{formData.email}</div>
+                    </div>
                 </div>
             </div>
 
