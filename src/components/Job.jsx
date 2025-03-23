@@ -1,38 +1,16 @@
-import { useState } from "react"
+import useForm from "../hooks/useForm"
 
 export default function Job({onSubmit}) {
 
-    // First render will be form to edit
-    const [formStatus, setFormStatus] = useState({isEditing: true, isDisplaying: false})
-
-    const [formData, setFormData] = useState({
-        title: "",
-        company: "",
-        start: "",
-        end: "",
-    })
-
-    const handleSubmit = (e) =>{
-        e.preventDefault();
-        const newFormData = {
-            ...formData,
-            [e.target.name]: e.target.value,
-        };
-
-        setFormData(newFormData);
-        setFormStatus({isEditing: false, isDisplaying: true});
-        onSubmit()
-    }
-
-
-    const handleChange = (e) => {
-        const newFormData = {
-            ...formData,
-            [e.target.name]: e.target.value,
-        };
-
-        setFormData(newFormData);
-    }
+    const {formData, handleChange, handleSubmit, formStatus} = useForm(
+        {
+            title: "",
+            company: "",
+            start: "",
+            end: "",
+        },
+        onSubmit
+    );
 
     if(formStatus.isEditing && !formStatus.isDisplaying) {
         return (
@@ -59,7 +37,7 @@ export default function Job({onSubmit}) {
 
     if(!formStatus.isEditing && formStatus.isDisplaying) {
         return(
-            <h1>Not Done!</h1>
+            <h1>Job info would be here</h1>
         )
     }
 
