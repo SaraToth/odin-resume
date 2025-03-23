@@ -1,39 +1,18 @@
-import { useState } from "react"
 import "./GenInfo.css"
+import useForm from "../hooks/useForm";
 
 export default function GenInfo({onSubmit}) {
 
-    // First render will be form to edit
-    const [formStatus, setFormStatus] = useState({isEditing: true, isDisplaying: false})
-
-    const [formData, setFormData] = useState({
-        first: "",
-        last: "",
-        email: "",
-        phone: "",
-        title: "",
-    })
-
-    const handleSubmit = (e) =>{
-        e.preventDefault();
-        const newFormData = {
-            ...formData,
-            [e.target.name]: e.target.value,
-        };
-
-        setFormData(newFormData);
-        setFormStatus({isEditing: false, isDisplaying: true})
-        onSubmit(); // Call on onSubmit passed down via app
-    }
-
-    const handleChange = (e) => {
-        const newFormData = {
-            ...formData,
-            [e.target.name]: e.target.value,
-        };
-
-        setFormData(newFormData);
-    }
+    const {formData, handleChange, handleSubmit, formStatus} = useForm(
+        {
+            first: "",
+            last: "",
+            email: "",
+            phone: "",
+            title: "",
+        },
+        onSubmit
+    );
 
     if(formStatus.isEditing && !formStatus.isDisplaying) {
         return (
