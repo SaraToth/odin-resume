@@ -1,32 +1,14 @@
-import { useState } from "react"
+import useForm from "../hooks/useForm";
 
 export default function JobSum({onSubmit}) {
-    const [formStatus, setFormStatus] = useState({isEditing: true, isDisplaying: false});
-    const [formData, setFormData] = useState({
-        summary: "",
-    });
 
-    const handleSubmit = (e)=> {
-        e.preventDefault();
+    const {formData, handleChange, handleSubmit, formStatus} = useForm(
+        {
+            summary: "",
+        },
+        onSubmit
+    );
 
-        const newFormData = {
-            ...formData,
-            [e.target.name]: e.target.value,
-        }
-
-        setFormData(newFormData);
-        setFormStatus({isEditing: false, isDisplaying: true});
-        onSubmit()
-    }
-    
-    const handleChange = (e)=>{
-        const newFormData = {
-            ...formData,
-            [e.target.name]: e.target.value
-        }
-
-        setFormData(newFormData);
-    }
 
     if(formStatus.isEditing && !formStatus.isDisplaying) {
         return(
@@ -43,7 +25,7 @@ export default function JobSum({onSubmit}) {
 
     if(!formStatus.isEditing && formStatus.isDisplaying) {
         return(
-            <h1>Submited</h1>
+            <h1>Job sum would be here</h1>
         )
     }
 }
