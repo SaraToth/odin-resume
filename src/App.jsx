@@ -9,13 +9,13 @@ function App() {
 
   const [currentPage, setCurrentPage] = useState("genInfo");
 
-  const handleSubmit = () =>{
+  const changePage = () =>{
     setCurrentPage("jobList")
   }
 return (
   <div className="app-container">
     <div className="main">
-      {currentPage === "genInfo" && <GenInfo onSubmit={handleSubmit} />}
+      {currentPage === "genInfo" && <GenInfo onSubmit={changePage} />}
       {currentPage === "jobList" && <JobList />}
     </div>
     <Footer />
