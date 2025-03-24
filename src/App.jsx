@@ -1,9 +1,9 @@
 // import { useState } from 'react'
 import './App.css'
 import { useState } from 'react';
-import GenInfo from './components/GenInfo'
+import GenInfo from './pages/GenInfo'
 import Footer from './components/Footer'
-import JobList from './components/JobList';
+import JobList from './pages/JobList';
 
 function App() {
 
