@@ -1,9 +1,10 @@
 import "./GenInfo.css"
 import useForm from "../hooks/useForm";
 
-export default function GenInfo({onSubmit}) {
+export default function GenInfo({onSubmit, formStatus}) {
 
-    const {formData, handleChange, handleSubmit, formStatus} = useForm(
+    // FormStatus not necessary
+    const {formData, handleChange, handleSubmit} = useForm(
         {
             first: "",
             last: "",

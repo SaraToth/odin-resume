@@ -1,7 +1,7 @@
 import useForm from "../hooks/useForm";
 
 export default function Degree({onSubmit}) {
-    const {formData, handleChange, handleSubmit, formStatus} = useForm(
+    const {formData, handleChange, formStatus} = useForm(
         {
             name: "",
             school: "",

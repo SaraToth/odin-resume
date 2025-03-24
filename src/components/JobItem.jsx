@@ -1,5 +1,5 @@
 export default function JobItem({job}) {
-    console.log("Job Item - job: " + job);
+
     return (
         <div>
             <h2>{job.title} at {job.company}</h2> 

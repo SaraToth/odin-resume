@@ -1,7 +1,7 @@
 import useForm from "../hooks/useForm";
 
-export default function Summary({onSubmit}) {
-    const {formData, handleChange, formStatus} = useForm(
+export default function Summary({onSubmit, formStatus}) {
+    const {formData, handleChange} = useForm(
         {
             summary: "",
         },
