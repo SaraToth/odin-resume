@@ -10,13 +10,15 @@ function App() {
   const [currentPage, setCurrentPage] = useState("genInfo");
 
   const changePage = () =>{
-    setCurrentPage("jobList")
+    if(currentPage === "genInfo") setCurrentPage("jobList");
+    if(currentPage === "jobList") setCurrentPage("degreeList");
   }
 return (
   <div className="app-container">
     <div className="main">
       {currentPage === "genInfo" && <GenInfo onSubmit={changePage} />}
-      {currentPage === "jobList" && <JobList />}
+      {currentPage === "jobList" && <JobList onClick={changePage} />}
+      {currentPage === "degreeList" && <h1>She not ready yet</h1>}
     </div>
     <Footer />
   </div>
