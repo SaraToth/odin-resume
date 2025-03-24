@@ -4,6 +4,7 @@ import { useState } from 'react';
 import GenInfo from './pages/GenInfo'
 import Footer from './components/Footer'
 import JobList from './pages/JobList';
+import DegreeList from './pages/DegreeList';
 
 function App() {
 
@@ -18,7 +19,7 @@ return (
     <div className="main">
       {currentPage === "genInfo" && <GenInfo onSubmit={changePage} />}
       {currentPage === "jobList" && <JobList onClick={changePage} />}
-      {currentPage === "degreeList" && <h1>She not ready yet</h1>}
+      {currentPage === "degreeList" && <DegreeList />}
     </div>
     <Footer />
   </div>
