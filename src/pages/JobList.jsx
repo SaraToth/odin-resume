@@ -3,7 +3,7 @@ import Job from "../components/Job"
 import JobSum from "../components/JobSum";
 import JobItem from "../components/JobItem";
 
-export default function JobList() {
+export default function JobList({onClick}) {
     const [currentSubPage, setCurrentSubPage] = useState("job");
     const [jobs, setJobs] = useState([]); // Stores ALL submitted job data in an array
     const [currentJob, setCurrentJob] = useState({}) // Stores current job temporarily
@@ -42,6 +42,7 @@ export default function JobList() {
                 <h1>Work Experience</h1>
                 {/* Job passes one job property as a prop */}
                 {jobs.map((job) => <JobItem key={job.jobID} job={job} />)}
+                <button onClick={onClick} className="submit-btn">Submit</button>
             </div>
 }
         </div>
