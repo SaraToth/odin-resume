@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function useForm(initialData) {
+export default function useForm(initialData, onSubmit) {
         const [formData, setFormData] = useState(initialData);
     
         const handleChange = (e) => {
@@ -12,5 +12,12 @@ export default function useForm(initialData) {
             setFormData(newFormData);
         }
 
-        return {formData, setFormData, handleChange};
+        const handleBasicSubmit = (e) => {
+            e.preventDefault()
+            if(onSubmit) {
+                onSubmit(formData)
+            }
+        }
+
+        return {formData, setFormData, handleChange, handleBasicSubmit};
 }
