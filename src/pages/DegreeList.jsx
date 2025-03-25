@@ -2,10 +2,10 @@ import { useState } from "react";
 import Degree from "../components/Degree";
 import DegreeItem from "../components/DegreeItem";
 
-export default function DegreeList({onClick}) {
+export default function DegreeList({degrees, setDegrees, onClick}) {
     const [currentSubPage, setCurrentSubPage] = useState("degree");
 
-    const [degrees, setDegrees] = useState([]); // Stores ALL submitted degree data in an array
+    // const [degrees, setDegrees] = useState([]); // Stores ALL submitted degree data in an array
 
     const handleDegreeSubmit = (degreeData) => {
         const degreeID = crypto.randomUUID();
