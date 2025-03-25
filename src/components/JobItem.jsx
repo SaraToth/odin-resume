@@ -1,7 +1,7 @@
 export default function JobItem({job}) {
 
     return (
-        <div>
+        <div className="job-item">
             <h2>{job.title} at {job.company}</h2> 
             <p>{job.start} - {job.end}</p> 
             <p>{job.summary}</p> 
