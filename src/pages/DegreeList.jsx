@@ -22,6 +22,7 @@ export default function DegreeList({degrees, setDegrees, onClick}) {
             && <div>
                     <h1>Degree List</h1>
                     {degrees.map((degree)=> < DegreeItem key={degree.degreeID} degree={degree} />)}
+                    <button className="add-btn">Add</button>
                     <button onClick={onClick} className="submit-btn">Submit</button>
                 </div>}
         </div>

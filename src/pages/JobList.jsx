@@ -41,6 +41,7 @@ export default function JobList({jobs, setJobs, onClick}) {
                 <h1>Work Experience</h1>
                 {/* Job passes one job property as a prop */}
                 {jobs.map((job) => <JobItem key={job.jobID} job={job} />)}
+                <button className="add-btn">Add</button>
                 <button onClick={onClick} className="submit-btn">Submit</button>
             </div>
 }
