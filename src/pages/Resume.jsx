@@ -1,15 +1,12 @@
-import DegreeList from "./DegreeList";
-import JobList from "./JobList";
 import Summary from "./Summary";
 import GenInfo from "./GenInfo";
 
-export default function Resume() {
+export default function Resume({jobs, degrees, GenInfo, summary }) {
+
+
     return (
         <div>
-            <GenInfo />
-            <Summary />
-            <JobList />
-            <DegreeList />
+
         </div>
     )
 
