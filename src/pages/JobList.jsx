@@ -3,9 +3,8 @@ import Job from "../components/Job"
 import JobSum from "../components/JobSum";
 import JobItem from "../components/JobItem";
 
-export default function JobList({onClick}) {
+export default function JobList({jobs, setJobs, onClick}) {
     const [currentSubPage, setCurrentSubPage] = useState("job");
-    const [jobs, setJobs] = useState([]); // Stores ALL submitted job data in an array
     const [currentJob, setCurrentJob] = useState({}) // Stores current job temporarily
 
     const handleJobSubmit = (jobData) => {
@@ -21,7 +20,7 @@ export default function JobList({onClick}) {
         const jobID = crypto.randomUUID();
 
         // Combine job data, with summary and an id into one object
-        const newJobObject = {...currentJob, ...jobSumData, jobID: jobID}; 
+        const newJobObject = {...currentJob, ...jobSumData, jobID: jobID,}; 
 
         // Add new job to the array state
         setJobs((prevJobs) => [...prevJobs, newJobObject]);
