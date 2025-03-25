@@ -1,10 +1,10 @@
 import "./GenInfo.css"
 import useForm from "../hooks/useForm";
 
-export default function GenInfo({onSubmit, formStatus}) {
+export default function GenInfo({setGenInfo, onSubmit}) {
 
     // FormStatus not necessary
-    const {formData, handleChange, handleSubmit} = useForm(
+    const {formData, handleChange} = useForm(
         {
             first: "",
             last: "",
@@ -15,11 +15,18 @@ export default function GenInfo({onSubmit, formStatus}) {
         onSubmit
     );
 
-    if(formStatus.isEditing && !formStatus.isDisplaying) {
+    const handleGenInfoSubmit = (info) => {
+        info.preventDefault();
+        // Get Job info and switch to job summary form
+        const newGenInfo = {...info}
+        setGenInfo(newGenInfo);
+
+        onSubmit()
+    }
+    
         return (
-            <>
             <div className="form-container">
-                <form onSubmit={handleSubmit}>
+                <form onSubmit={handleGenInfoSubmit}>
                     <h1>General Information</h1>
                     <div className="form-content">
 
@@ -58,25 +65,22 @@ export default function GenInfo({onSubmit, formStatus}) {
                     </div>
                 </form>
             </div>
-            </>
         )
     }
 
-    if(!formStatus.isEditing && formStatus.isDisplaying) {
-        const name = formData.first + " " + formData.last;
-        return (
-            <div className="display-container">
-                <div className="display-content">
-                    <h1>{name}</h1>
-                    <h2>{formData.title}</h2>
-                    <div className="display-contact">
-                        <div>{formData.phone}</div>
-                        <div>{formData.email}</div>
-                    </div>
-                </div>
-            </div>
+    // if(!formStatus.isEditing && formStatus.isDisplaying) {
+    //     const name = formData.first + " " + formData.last;
+    //     return (
+    //         <div className="display-container">
+    //             <div className="display-content">
+    //                 <h1>{name}</h1>
+    //                 <h2>{formData.title}</h2>
+    //                 <div className="display-contact">
+    //                     <div>{formData.phone}</div>
+    //                     <div>{formData.email}</div>
+    //                 </div>
+    //             </div>
+    //         </div>
 
-        )
-    }
-
-}
+    //     )
+    // }
