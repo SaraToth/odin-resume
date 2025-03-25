@@ -11,7 +11,7 @@ export default function Summary({onSubmit, setSummary}) {
     const customHandleSubmit = (e) => {
         e.preventDefault();
 
-        const newSummary = {...e}
+        const newSummary = formData;
         setSummary(newSummary);
 
         onSubmit(formData);
