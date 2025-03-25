@@ -7,8 +7,8 @@ export default function Resume({jobs, degrees, genInfo, summary }) {
     const name = genInfo.first + " " + genInfo.last;
 
     return (
-        <div>
-            <div>
+        <div className="container-resume">
+            <div className="container-info">
                 <h1>{name}</h1>
                 <h2>{GenInfo.title}</h2>
                 <div className="display-contact">
@@ -17,16 +17,16 @@ export default function Resume({jobs, degrees, genInfo, summary }) {
                 </div>
             </div>
 
-            <div>
+            <div className="container-summary">
                 <p>summary</p>
             </div>
 
-            <div>
+            <div className="container-experience">
                 <h3>Work Experience</h3>
                 {jobs.map((job) => <JobItem key={job.jobID} job={job} />)}
             </div>
 
-            <div>
+            <div className="container-education">
                 <h3>Education</h3>
                 <p>TBA</p>
             </div>
