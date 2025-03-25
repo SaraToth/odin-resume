@@ -15,18 +15,15 @@ export default function GenInfo({setGenInfo, onSubmit}) {
         onSubmit
     );
 
-    const handleGenInfoSubmit = (e) => {
+    const submitGenInfo = (e) => {
         e.preventDefault();
-        // Get Job info and switch to job summary form
-        const newGenInfo = formData;
-        setGenInfo(newGenInfo);
-
+        setGenInfo(formData);
         onSubmit()
     }
     
         return (
             <div className="form-container">
-                <form onSubmit={handleGenInfoSubmit}>
+                <form onSubmit={submitGenInfo}>
                     <h1>General Information</h1>
                     <div className="form-content">
 

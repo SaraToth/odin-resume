@@ -8,18 +8,15 @@ export default function Summary({onSubmit, setSummary}) {
         onSubmit
     );   
 
-    const customHandleSubmit = (e) => {
+    const submitSummary = (e) => {
         e.preventDefault();
-
-        const newSummary = formData;
-        setSummary(newSummary);
-
-        onSubmit(formData);
+        setSummary(formData);
+        onSubmit()
     } 
 
     return (
         <div className="form-container">
-        <form onSubmit={customHandleSubmit}>
+        <form onSubmit={submitSummary}>
             <h1>Career Summary</h1>
             <textarea name="summary" id="summary" value={formData.summary} onChange={handleChange} required>Type your job description here</textarea>
             <button type="submit" className="submit-btn">Submit</button>
