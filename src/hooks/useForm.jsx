@@ -12,12 +12,13 @@ export default function useForm(initialData, onSubmit) {
             setFormData(newFormData);
         }
 
-        const handleBasicSubmit = (e) => {
+        const submitFormData = (e) => {
             e.preventDefault()
             if(onSubmit) {
                 onSubmit(formData)
             }
         }
 
-        return {formData, setFormData, handleChange, handleBasicSubmit};
+
+        return {formData, setFormData, handleChange, submitFormData};
 }

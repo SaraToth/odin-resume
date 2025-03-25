@@ -1,7 +1,7 @@
 import useForm from "../hooks/useForm";
 
 export default function Degree({onSubmit}) {
-    const {formData, handleChange, handleBasicSubmit} = useForm(
+    const {formData, handleChange, submitFormData} = useForm(
         {
             name: "",
             school: "",
@@ -13,7 +13,7 @@ export default function Degree({onSubmit}) {
     return(
         <div className="form-container">
             <h1>Degree Information</h1>
-            <form onSubmit={handleBasicSubmit} >
+            <form onSubmit={submitFormData} >
                 <label htmlFor="name">Name</label>
                 <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} required></input>
 

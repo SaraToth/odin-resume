@@ -2,7 +2,7 @@ import useForm from "../hooks/useForm"
 
 export default function Job({onSubmit}) {
 
-    const {formData, handleChange, handleBasicSubmit } = useForm(
+    const {formData, handleChange, submitFormData} = useForm(
         {
             title: "",
             company: "",
@@ -11,18 +11,11 @@ export default function Job({onSubmit}) {
         },
         onSubmit
     );
-
-    // const customHandleSubmit = (e) => {
-    //     e.preventDefault();
-
-    //     onSubmit(formData);
-    // }
-
     
     return (
         <div className="form-container">
             <h1>Job Info</h1>
-            <form onSubmit={handleBasicSubmit}>
+            <form onSubmit={submitFormData}>
                 <label htmlFor="title">Title:</label>
                 <input type="text" id="title" name="title" value={formData.title} onChange={handleChange} required></input>
 
