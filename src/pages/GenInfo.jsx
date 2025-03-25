@@ -67,20 +67,3 @@ export default function GenInfo({setGenInfo, onSubmit}) {
             </div>
         )
     }
-
-    // if(!formStatus.isEditing && formStatus.isDisplaying) {
-    //     const name = formData.first + " " + formData.last;
-    //     return (
-    //         <div className="display-container">
-    //             <div className="display-content">
-    //                 <h1>{name}</h1>
-    //                 <h2>{formData.title}</h2>
-    //                 <div className="display-contact">
-    //                     <div>{formData.phone}</div>
-    //                     <div>{formData.email}</div>
-    //                 </div>
-    //             </div>
-    //         </div>
-
-    //     )
-    // }
