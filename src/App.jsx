@@ -14,8 +14,8 @@ function App() {
 
   const [jobs, setJobs] = useState([]); // Stores ALL submitted job data in an array
   const [degrees, setDegrees] = useState([]); // Stores ALL submitted degree data in an array
-  const [genInfo, setGenInfo] = useState([]);
-  const [summary, setSummary] = useState([]);
+  const [genInfo, setGenInfo] = useState({});
+  const [summary, setSummary] = useState({});
 
   const changePage = () =>{
     if(currentPage === "genInfo") setCurrentPage("jobList");
